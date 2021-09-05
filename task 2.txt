@@ -1,0 +1,183 @@
+package com.hp;
+
+/*
+Online shopping sites have categories for women's and men's clothing.
+
+We can create a class to describe a women's clothing item: WomenClothing.
+Top and Bottom classes will inherit WomenClothing.
+
+Top describes a t-shirt, tunic, blouse, etc. item.
+Bottom describes pants, jeans, skirt, etc. item.
+*/
+
+class Main {
+    public static void main(String args[]) {
+
+        Top wc1 = new Top(32, "Zara", "001",
+                0.5, false, "maroon", "cotton");
+        Bottom wc2 = new Bottom(44, "H&M", "002",
+                "high-waist", 4, "camo", "polyster");
+
+        wc1.calculatePrice();
+        wc2.calculatePrice();
+        wc1.printString();
+        System.out.println("price: " + wc1.getPrice());
+        System.out.print("\n\n");
+        wc2.printString();
+        System.out.println("price: " + wc2.getPrice());
+
+        wc1.setPrice(500);
+        wc1.setFabric("lycra");
+        wc1.setIsJacket(true);
+        wc2.setPrice(0);
+        wc2.setType(2);
+
+        System.out.print("\n\n\n");
+        wc1.printString();
+        System.out.println("price: " + wc1.getPrice());
+
+        System.out.print("\n\n");
+        wc2.printString();
+        System.out.println("price: " + wc2.getPrice());
+
+
+    }
+}
+
+package com.hp;
+
+public class WomenClothing{
+    protected int size;
+    protected String brand;
+    protected String itemID;
+    protected double price;
+    protected String color;
+    protected String fabric;
+
+
+    public void setSize(int size){
+        this.size = size;
+    }
+    public void setBrand(String brand){
+        this.brand = brand;
+    }
+    public void setItemID(String itemID){
+        this.itemID = itemID;
+    }
+    public void setPrice(double price){
+        this.price = price;
+    }
+    public void setColor(String color){
+        this.color = color;
+    }
+    public void setFabric(String fabric){
+        this.fabric = fabric;
+    }
+
+    public int getSize(){
+        return this.size;
+    }
+    public String getBrand(){
+        return this.brand;
+    }
+    public String getItemID(){
+        return this.itemID;
+    }
+    public double getPrice(){
+        return this.price;
+    }
+    public String getColor(){
+        return this.color;
+    }
+    public String getFabric(){
+        return this.fabric;
+    }
+
+}
+
+package com.hp;
+
+class Top extends WomenClothing{
+    private double sleeve;
+    private boolean isJacket;
+
+    public Top(int size, String brand, String itemID,
+               double sleeve, boolean isJacket,
+               String color, String fabric){
+
+        this.size = size;
+        this.brand = brand;
+        this.itemID = itemID;
+        this.sleeve = sleeve;
+        this.isJacket = isJacket;
+        this.color = color;
+        this.fabric = fabric;
+    }
+
+    public void setSleeve(double sleeve){
+        this.sleeve = sleeve;
+    }
+    public void setIsJacket(boolean isJacket){
+        this.isJacket = isJacket;
+    }
+
+    public double getSleeve(){
+        return this.sleeve;
+    }
+    public boolean getIsJacket(){
+        return this.isJacket;
+    }
+
+ //
+    public void calculatePrice(){
+        this.price = 15 * this.sleeve * this.size;
+    }
+    public void printString(){
+        System.out.printf("Top #%s\nsize: %d\nbrand: %s\ncolor: %s\nfabric: %s\nsleeve length: %.3f\njacket: %b\n\n",
+                itemID, size, brand, color, fabric, sleeve, isJacket);
+    }
+
+}
+
+package com.hp;
+
+class Bottom extends WomenClothing{
+    private String waistline;
+    private int type;
+
+    public Bottom(int size, String brand, String itemID,
+                  String waistline, int type,
+                  String color, String fabric){
+
+        this.size = size;
+        this.brand = brand;
+        this.itemID = itemID;
+        this.waistline = waistline;
+        this.type = type;
+        this.color = color;
+        this.fabric = fabric;
+    }
+
+    public void setWaistline(String waistline){
+        this.waistline = waistline;
+    }
+    public void setType(int type){
+        this.type = type;
+    }
+
+    public String getWaistline(){
+        return this.waistline;
+    }
+    public int getType(){
+        return this.type;
+    }
+
+    //
+    public void calculatePrice(){
+        this.price = 15 * this.type * this.size;
+    }
+    public void printString(){
+        System.out.printf("Bottom #%s\nsize: %d\nbrand: %s\ncolor: %s\nfabric: %s\nwaistline: %s\ntype: %d\n\n",
+                itemID, size, brand, color, fabric, waistline, type);
+    }
+}
