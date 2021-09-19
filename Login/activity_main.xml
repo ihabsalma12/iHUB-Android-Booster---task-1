@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:layout_marginTop="64dp"
+    android:layout_marginBottom="32dp"
+    android:layout_marginStart="32dp"
+    android:layout_marginEnd="32dp"
+    tools:context=".MainActivity"
+>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_centerHorizontal="true"
+        android:text="Sign In"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+         />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/title"
+        android:layout_marginTop="64dp"
+        android:text="Email"
+        android:textColor="@color/black"
+        android:textSize="12dp"/>
+
+    <EditText
+        android:id="@+id/edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/email"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="32dp"
+        android:layout_below="@id/edit_email"
+        android:text="Password"
+        android:textColor="@color/black"
+        android:textSize="12dp"/>
+
+    <EditText
+        android:id="@+id/edit_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/pass"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/forgot_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+
+        android:layout_below="@+id/edit_pass"
+        android:text="Forgot Password?"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        android:backgroundTint="#cdcdc1"/>
+
+    <CheckBox
+        android:id="@+id/remember_me"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/forgot_pass"
+        android:text="Remember me"
+        android:textColor="@color/black"
+        android:textSize="10dp" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="32dp"
+        android:layout_below="@id/remember_me"
+        android:layout_centerHorizontal="true"
+        android:text="LOGIN"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:backgroundTint="#cdcdc1"/>
+
+    <TextView
+        android:id="@+id/alt_sign_in"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="64dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/login"
+        android:text="Sign in with"
+        android:textColor="@color/black"
+        android:textSize="12dp"/>
+
+<LinearLayout
+    android:id="@+id/social"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/alt_sign_in"
+    android:layout_centerHorizontal="true"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/FB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@id/alt_sign_in"
+        android:text="facebook"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:backgroundTint="#1c69ad"/>
+
+    <Button
+        android:id="@+id/Google"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="16dp"
+        android:layout_below="@id/alt_sign_in"
+        android:text="Google"
+        android:textAllCaps="false"
+        android:backgroundTint="#226c51"
+        android:textSize="16dp"/>
+
+
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/social"
+    android:layout_marginTop="16dp">
+
+    <TextView
+        android:id="@+id/sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account?"
+        android:textColor="#585858"
+        android:textSize="12dp"/>
+
+    <Button
+        android:id="@+id/edit_sign_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign up"
+        android:textSize="12dp"
+        android:backgroundTint="@color/white"
+        android:textAllCaps="false"
+        android:textColor="@color/black"/>
+
+</LinearLayout>
+
+
+
+</RelativeLayout>
